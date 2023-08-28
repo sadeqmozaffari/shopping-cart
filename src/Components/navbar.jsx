@@ -1,13 +1,14 @@
 import { RiShoppingCartLine } from "react-icons/ri";
-import React from "react";
+import { useCartContext } from "../context";
 
 const Navbar = () => {
+  const { cart } = useCartContext();
   return (
     <header className="navbar navbar-dark bg-dark shadow-sm">
       <div className="container">
         <a className="navbar-tool ms-3">
           <div className="navbar-tool-icon-box bg-secondary">
-            <span className="navbar-tool-label">4</span>
+            <span className="navbar-tool-label">{cart.length}</span>
             <RiShoppingCartLine className="navbar-tool-icon" />
           </div>
         </a>
